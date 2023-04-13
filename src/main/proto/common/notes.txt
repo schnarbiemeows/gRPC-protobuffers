@@ -1,0 +1,4 @@
+note: in order for the javascript compilation to work, you need to change line 58 in the pom.xml
+to an older version, like 3.20.<something>
+https://www.udemy.com/course/grpc-the-complete-guide-for-java-developers/learn/lecture/34433624#overview
+
