@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package common; // proto package
+
+option java_multiple_files=true;
+option java_package="com.models.common";  // java class package
+
+message Car {
+  string make = 1;
+  string model = 2;
+  int32 year = 3;
+  BodyStyle bodyStyle = 4;
+}
+
+enum BodyStyle {
+  SEDAN = 0;  // always has to have a default value - this is that value
+  COUPE = 1;
+  SUV = 2;
+}

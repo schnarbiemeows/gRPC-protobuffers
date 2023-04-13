@@ -1,0 +1,41 @@
+syntax = "proto3";
+option java_multiple_files=true;
+option java_package="com.models";
+
+import "common/address.proto";
+import "common/car.proto";
+import "google/protobuf/wrappers.proto";
+
+// v1
+/*message Television {
+  string brand = 1;
+  int32 year = 2;
+}*/
+
+// v2
+/*message Television {
+  string brand = 1;
+  int32 model = 2;
+  Type type = 3;
+}*/
+
+// V3
+/*message Television {
+  string brand = 1;
+  Type type = 3;
+}*/
+
+// V4
+message Television {
+  string brand = 1;
+  reserved 2;               // when versioning, we need to mark the old #s
+  reserved "year","model";  // and fields as no longer reusable
+  int32 price = 4;
+  Type type = 3;
+}
+
+enum Type {
+  HD = 0;
+  UHD = 1;
+  OLED = 2;
+}
